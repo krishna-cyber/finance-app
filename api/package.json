@@ -1,0 +1,29 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon server.js",
+    "db:generate": "drizzle-kit generate --dialect=postgresql --schema=src/database/schema.ts --out=./drizzle",
+    "db:migrate": "node ./src/migrate.ts",
+    "db:seed": "node ./src/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.35.3",
+    "drizzle-zod": "^0.5.1",
+    "express": "5.0.1",
+    "mongoose": "^8.7.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "drizzle-kit": "0.20.17"
+  }
+}

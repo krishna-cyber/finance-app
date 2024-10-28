@@ -34,7 +34,7 @@ const HeaderNav = () => {
       <div className="mx-auto flex gap-4">
 
       {navItems.map((item) => (
-          <HeaderNavButton label={item.title} href={item.link} isActive={pathname === item.link} />
+          <HeaderNavButton key={item.link} label={item.title} href={item.link} isActive={pathname === item.link} />
       ))}
       </div>
       <ClerkLoaded>
