@@ -1,5 +1,6 @@
 import express from "express";
 import morgan from "morgan";
+import cors from "cors";
 
 
 import "../database/dbConnect.js"; // import database connection file and connect to mongodb atlas database url from .env file\\\
@@ -9,6 +10,7 @@ import router from "./routerConfig.js";
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));

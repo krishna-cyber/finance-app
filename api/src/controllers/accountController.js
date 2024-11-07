@@ -7,7 +7,11 @@ class AccountController {
 
       res
         .status(200)
-        .json({ message: "All accounts fetched successfully", accounts });
+        .json({
+          result: accounts,
+          message: "All accounts fetched successfully",
+          meta: null,
+        });
     } catch (error) {
       throw new Error(error);
     }
