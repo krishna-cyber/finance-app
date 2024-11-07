@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import localFont from "next/font/local";
 import "./globals.css";
-import QueryProviders from "../../utils/providers/queryProviders";
+import QueryProviders from "../utils/providers/queryProviders";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
