@@ -1,11 +1,10 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-
+import { clerkMiddleware } from "@clerk/express";
 
 import "../database/dbConnect.js"; // import database connection file and connect to mongodb atlas database url from .env file\\\
 import router from "./routerConfig.js";
-
 
 const app = express();
 
@@ -16,7 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // router mounting point
-app.use(router)
+app.use(clerkMiddleware({ debug: true })); // clerk middleware for authentication and authorization
+app.use(router);
 
 // app.get('/users', async (req, res) => {
 //     try {

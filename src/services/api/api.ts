@@ -1,10 +1,13 @@
 import { axiosInstance } from "@/utils/config/axiosConfig";
-import {  Response } from "@/utils/types/types";
+import { Response } from "@/utils/types/types";
 
-const getAccounts = async () => {
-    return await axiosInstance.get<Response>('/account/users')
+const getAccounts = async (sessionToken: string) => {
+  console.log(sessionToken);
+  return await axiosInstance.get<Response>("/account/users", {
+    headers: {
+      Authorization: `Bearer ${sessionToken}`,
+    },
+  });
 };
-
-
 
 export { getAccounts };

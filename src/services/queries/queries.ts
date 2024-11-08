@@ -14,7 +14,10 @@ const useGetAccounts = (sessionToken: string) => {
   console.log(sessionToken);
   return useQuery({
     queryKey: ["accounts"],
-    queryFn: getAccounts,
+    queryFn: async () => {
+      const data = getAccounts(sessionToken);
+      return data;
+    },
   });
 };
 
